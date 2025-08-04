@@ -51,3 +51,26 @@
 // }
 
 // console.log(countUppercase("HelloWorLD JAVascripT"))
+
+// 3-masala 
+
+// const getPositive=(arr)=>{
+//     let resualt=[]
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i]>=0){
+//             resualt.push(arr[i])
+//         }
+//     }
+//      return resualt
+// }
+
+// console.log(getPositive([3, -1, 5, 0, -4, 8]))
+
+// way-2
+
+// const getPositive=(arr)=>{
+//     return arr.filter((num)=>num>=0)
+// }
+
+// console.log(getPositive([3, -1, 5, 0, -4, 8]))
+
