@@ -27,3 +27,19 @@
 
 // 2-masala 
 
+// Shart:
+// Input: "WebBrainAcademy"
+// Output: 3 (W, B, A — katta harflar)
+
+// const countUppercase=(str)=>{
+//     let count=0
+//     for(let i=0; i<str.length; i++){
+//         if(str[i]>='A' && str[i]<='Z'){
+//               count++
+//               console.log(str[i])
+//         }
+//     }
+//     return(count)
+// }
+
+// console.log(countUppercase("HelloWorLD JAVascripT"))
