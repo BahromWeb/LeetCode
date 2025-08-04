@@ -43,3 +43,11 @@
 // }
 
 // console.log(countUppercase("HelloWorLD JAVascripT"))
+
+// way-2
+
+// const countUppercase=(str)=>{
+//     return  str.split('').filter(char=>char>='A' && char<='Z').length
+// }
+
+// console.log(countUppercase("HelloWorLD JAVascripT"))
