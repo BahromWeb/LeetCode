@@ -74,3 +74,24 @@
 
 // console.log(getPositive([3, -1, 5, 0, -4, 8]))
 
+
+// 4-masala
+
+const isPolindrom=(str)=>{
+    t=false
+    for(let i=0; i<str.lenght/2; i++){
+        if(str[i]!==str[str.lenght-1-i]){
+             t=true
+        }
+    }
+    return true
+}
+
+if(t){
+    console.log("Palindrom")
+}else{
+    console.log("Palindrom emas")
+}
+
+
+console.log(isPolindrom("Bahrom"))
