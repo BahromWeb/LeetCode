@@ -17,7 +17,7 @@
 
 // console.log(findMax([5, 9, 2, 4, 11, 3]))
 
-// method usul
+// way-2
 
 // const findMax=(arr)=>{
 //     return Math.max(...arr)
