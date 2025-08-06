@@ -1,54 +1,30 @@
-//  1. Teskari so‘z
-// Shart: "salom" → "molas"
+// 1. Teskari So‘z
+// Berilgan matnning har bir so‘zini teskari qilib qaytaradigan funksiya yozing.
+// Input: "hello world" → Output: "olleh dlrow"
 
-// const reverseString=(str)=>{
-//     let reversed=''
-//     for(let i=str.length-1; i>=0; i--){
-//         reversed+=str[i]
+// 1-example
+
+// const reverseWord=(str)=>{
+//   let  word=str.split(" ")
+//   let newReverse=[]
+//     for(let i=0; i<word.length; i++){
+//       let  reversed=word[i].split("").reverse().join('')
+//         newReverse.push(reversed)
 //     }
-//     return reversed
+//     return newReverse.join(" ")
 // }
 
-// console.log(reverseString("salom"))
+// console.log(reverseWord("Hello JavaScript hammaga"))
 
-//  2. Eng katta sonni topish
+// 2-masala 
 
-// const findMax=(arr)=>{
-//     max=arr[0]
-//     for(i=1; i<=arr.length; i++){
-//         if(arr[i]>max){
-//             max=arr[i]
-//         }
-//     }
-//     return max
-// }
+// Shart:
+// Berilgan so‘zda nechta harf bir necha marta takrorlanganini aniqlang va ularni obyekt (object) ko‘rinishida qaytaring.
 
-// console.log(findMax([2,4,56,67,8,45,32,56,]))
-
-//  way-2
-
-// const findMax=(arr)=>{
-//     return max=Math.max(...arr)
-// }
-
-// console.log(findMax([2,4,56,67,8,45,32,56,]))
-
-
-// 3 Palindrom son 
-
-
-const isPolindrom = (str) => {
-    str = str.toString();
-    for (let i = 0; i < str.length / 2; i++) {
-        if (str[i] !== str[str.length - i - 1]) {
-            return false;
-        }
-    }
-    return true;
-}
-
-if (isPolindrom(1221)) {
-    console.log("Palindrom son");
-} else {
-    console.log("Palindrom son emas");
+const findDuplicateLetters=(str)=>{
+    let count={}
+    let result={}
+   for(let i=0; i<str.length; i++){
+      let 
+   }
 }
