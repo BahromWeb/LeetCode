@@ -2,7 +2,7 @@
 // Berilgan matnning har bir so‘zini teskari qilib qaytaradigan funksiya yozing.
 // Input: "hello world" → Output: "olleh dlrow"
 
-// 1-example
+// 1-masala
 
 // const reverseWord=(str)=>{
 //   let  word=str.split(" ")
@@ -70,3 +70,64 @@
 // }
 
 // console.log(toqIndex("javascript"))
+
+
+// 4-masala 
+
+// Shart:
+// Berilgan massivdagi barcha raqamlarni yig‘indisini hisoblaydigan funksiya yozing.
+
+
+// const sunArray=(str)=>{
+//     let sum=0;
+//     for(let i=0; i<str.length; i++){
+//         sum+=str[i]
+//     }
+//     return sum
+// }
+
+// console.log(sunArray([2,34,56,78,90,12]))
+
+// way-2
+
+// const sumArray=(str)=>{
+//    return str.reduce((total, num)=>total+num, 0)
+// }
+
+// console.log(sumArray([2,34,56,78,90,12]))
+
+
+// 5-masala 
+
+// const findArray=(arr)=>{
+//     let sorted=arr.sort((a, b)=>b-a)
+//     return [sorted[0], sorted[1]]
+// }
+
+
+// console.log(findArray([2,34,56,78,89,90]))
+
+// way-2
+
+// const findArray = (arr) => {
+//     let max1 = -Infinity;
+//     let max2 = -Infinity;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         let num = arr[i];
+
+//         if (num > max1) {
+//             max2 = max1;
+//             max1 = num;
+//         } else if (num > max2 && num !== max1) {
+//             max2 = num;
+//         }
+//     }
+
+//     return [max1, max2];
+// }
+
+// console.log(findArray([34, 45, 67, 4, 2, 12, 34, 90, 99])); 
+
+// 6-masala
+
