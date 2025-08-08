@@ -19,16 +19,30 @@
 
 // way-2
 
-const twoSum=(nums, target)=>{
-    const map=new Map()
-    for(let i=0; i<nums.length; i++){
-        needed=target-nums[i]
+// const twoSum=(nums, target)=>{
+//     const map=new Map()
+//     for(let i=0; i<nums.length; i++){
+//         needed=target-nums[i]
 
-        if(map.has(needed)){
-            return[map.get(needed), i]
-        }
-        map.set(nums[i], i)
-    }
-}
+//         if(map.has(needed)){
+//             return[map.get(needed), i]
+//         }
+//         map.set(nums[i], i)
+//     }
+// }
 
-console.log(twoSum([23,4,5,67,89,0,8], 9))
+// console.log(twoSum([23,4,5,67,89,0,8], 9))
+
+// way-3
+
+// const twoSum=(nums, target)=>{
+//     const seen = {};
+//     for (let i = 0; i < nums.length; i++) {
+//         let diff = target - nums[i];
+//         if (seen[diff] !== undefined) {
+//             return [seen[diff], i];
+//         }
+//         seen[nums[i]] = i;
+//     }
+// }
+// console.log(twoSum([2, 7, 11, 15], 9)); 
