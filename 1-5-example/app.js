@@ -116,15 +116,22 @@
 
 // way-2
 
-const romanToInt=(s)=>{
-    const values = {
-        I: 1, V: 5, X: 10, L: 50,
-        C: 100, D: 500, M: 1000
-    }
+// const romanToInt=(s)=>{
+//     const values = {
+//         I: 1, V: 5, X: 10, L: 50,
+//         C: 100, D: 500, M: 1000
+//     }
     
-    return s.split('').reduce((item, key, i, arr)=>{
-         return values[key]<values[arr[i+1]]?item-values[key]:item+values[key]
-    }, 0)
-}
+//     return s.split('').reduce((item, key, i, arr)=>{
+//          return values[key]<values[arr[i+1]]?item-values[key]:item+values[key]
+//     }, 0)
+// }
 
-console.log(romanToInt("XXMMDD"))
+// console.log(romanToInt("XXMMDD"))
+
+// 4-masala: Longest Common Prefix
+
+// so‘zlar ro‘yxati (strs) berilgan.
+// Vazifa — ularning eng uzun umumiy prefiksini topish.
+// Agar umumiy prefiks bo‘lmasa, bo‘sh string ("") qaytar.
+
