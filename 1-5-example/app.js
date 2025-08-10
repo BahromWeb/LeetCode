@@ -1,48 +1,36 @@
-// LeetCode oson masalalari JavaScript bilan
 
-// 1. Two Sum
-// 🔹 Masala:
-// Sizga sonlardan iborat nums array va target soni berilgan.
-// Shunday ikkita index topingki, ularning qiymatlari yig'indisi targetga teng bo‘lsin.
+// 1-masala
+//  Ro‘yxatdan ikkita turli indeksdagi sonlarni topish kerakki, ularning yig‘indisi targetga teng bo‘lsin.
+// Natija sifatida bu ikkala sonning indekslarini massiv ko‘rinishida qaytar.
 
-// const  twoSum=(nums, target)=>{
+// const twoSum=(nums, target)=>{
 //     for(let i=0; i<nums.length; i++){
-//         for(let j=0; j<nums.length; j++){
-//             if(nums[i]+nums[j]===target){
+//         for(let j=i+1; j<nums.length; j++){
+//             if(nums[i]+nums[j]==target){
 //                 return [i, j]
 //             }
 //         }
 //     }
 // }
 
-// console.log(twoSum([23,4,5,67,89,0,8], 9))
+
+// console.log(twoSum([3, 4, 5, 7, 8, 89, 43, 20], 15))
 
 // way-2
 
 // const twoSum=(nums, target)=>{
-//     const map=new Map()
+//     let map=new Map()
+    
 //     for(let i=0; i<nums.length; i++){
-//         needed=target-nums[i]
+//         let needed=target-nums[i]
 
 //         if(map.has(needed)){
-//             return[map.get(needed), i]
+//             return [map.get(needed), i]
 //         }
 //         map.set(nums[i], i)
 //     }
+
 // }
 
-// console.log(twoSum([23,4,5,67,89,0,8], 9))
+// console.log(twoSum([3, 4, 5, 7, 8, 89, 43, 20], 15))
 
-// way-3
-
-// const twoSum=(nums, target)=>{
-//     const seen = {};
-//     for (let i = 0; i < nums.length; i++) {
-//         let diff = target - nums[i];
-//         if (seen[diff] !== undefined) {
-//             return [seen[diff], i];
-//         }
-//         seen[nums[i]] = i;
-//     }
-// }
-// console.log(twoSum([2, 7, 11, 15], 9)); 
