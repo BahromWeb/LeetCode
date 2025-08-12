@@ -151,3 +151,18 @@
 
 // console.log(longestCommonPrefix(["flower", "flow", "flight"]))
 
+// way-2
+
+function longestCommonPrefix(strs) {
+    if (!strs.length) return "";
+    let shortest = strs.reduce((a, b) => a.length < b.length ? a : b);
+    for (let i = 0; i < shortest.length; i++) {
+        for (let word of strs) {
+            if (word[i] !== shortest[i]) {
+                return shortest.slice(0, i);
+            }
+        }
+    }
+    return shortest;
+}
+console.log(longestCommonPrefix(["flower", "flow", "flight"])); // "fl"
