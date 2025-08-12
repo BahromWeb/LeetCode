@@ -137,17 +137,17 @@
 
 
 
-const longestCommonPrefix=(strs)=>{
-     if(!strs.length) return "";
-     let first=strs[0]
-     for(let i=1; i<strs.length; i++){
-        while(strs[i].indexOf(first) !==0){
-            first=first.slice(0, first.length-1)
-            if(!first) return ""
-        }
-     }
-     return first
-}
+// const longestCommonPrefix=(strs)=>{
+//      if(!strs.length) return "";
+//      let first=strs[0]
+//      for(let i=1; i<strs.length; i++){
+//         while(strs[i].indexOf(first) !==0){
+//             first=first.slice(0, first.length-1)
+//             if(!first) return ""
+//         }
+//      }
+//      return first
+// }
 
-console.log(longestCommonPrefix(["flower", "flow", "flight"]))
+// console.log(longestCommonPrefix(["flower", "flow", "flight"]))
 
