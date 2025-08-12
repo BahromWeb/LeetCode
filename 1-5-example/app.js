@@ -166,3 +166,42 @@
 //     return shortest;
 // }
 // console.log(longestCommonPrefix(["flower", "flow", "flight"])); // "fl"
+
+
+
+// 5-masala: Valid Parentheses
+
+// (, ), {, }, [ va ] belgilaridan iborat string beriladi.
+//  ushbu string to‘g‘ri yozilganini tekshirish
+// Har bir ochilgan qavs mos yopilish belgisi bilan yopilishi kerak.
+// Qavslar to‘g‘ri tartibda joylashgan bo‘lishi kerak.
+
+
+const isValid=(s)=>{
+    const stack = [];
+
+    for (let char of s) {
+        switch (char) {
+            case '(':
+            case '{':
+            case '[':
+                stack.push(char);
+                break;
+            case ')':
+                if (stack.pop() !== '(') return false;
+                break;
+            case '}':
+                if (stack.pop() !== '{') return false;
+                break;
+            case ']':
+                if (stack.pop() !== '[') return false;
+                break;
+        }
+    }
+    return stack.length === 0;
+}
+
+console.log(isValid("()"));       // true
+console.log(isValid("()[]{}"));   // true
+console.log(isValid("(]"));       // false
+console.log(isValid("{[]}"));     // true
