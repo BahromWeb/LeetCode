@@ -1,17 +1,19 @@
 
+
+
 // 1-masala
 //  Ro‘yxatdan ikkita turli indeksdagi sonlarni topish kerakki, ularning yig‘indisi targetga teng bo‘lsin.
 // Natija sifatida bu ikkala sonning indekslarini massiv ko‘rinishida qaytar.
 
-const twoSum=(nums, target)=>{
-    for(let i=0; i<nums.length; i++){
-        for(let j=i+1; j<nums.length; j++){
-            if(nums[i]+nums[j]==target){
-                return [i, j]
-            }
-        }
-    }
-}
+// const twoSum=(nums, target)=>{
+//     for(let i=0; i<nums.length; i++){
+//         for(let j=i+1; j<nums.length; j++){
+//             if(nums[i]+nums[j]==target){
+//                 return [i, j]
+//             }
+//         }
+//     }
+// }
 
 
 // console.log(twoSum([3, 4, 5, 7, 8, 89, 43, 20], 15))
@@ -177,31 +179,31 @@ const twoSum=(nums, target)=>{
 // Qavslar to‘g‘ri tartibda joylashgan bo‘lishi kerak.
 
 
-const isValid=(s)=>{
-    const stack = [];
+// const isValid=(s)=>{
+//     const stack = [];
 
-    for (let char of s) {
-        switch (char) {
-            case '(':
-            case '{':
-            case '[':
-                stack.push(char);
-                break;
-            case ')':
-                if (stack.pop() !== '(') return false;
-                break;
-            case '}':
-                if (stack.pop() !== '{') return false;
-                break;
-            case ']':
-                if (stack.pop() !== '[') return false;
-                break;
-        }
-    }
-    return stack.length === 0;
-}
+//     for (let char of s) {
+//         switch (char) {
+//             case '(':
+//             case '{':
+//             case '[':
+//                 stack.push(char);
+//                 break;
+//             case ')':
+//                 if (stack.pop() !== '(') return false;
+//                 break;
+//             case '}':
+//                 if (stack.pop() !== '{') return false;
+//                 break;
+//             case ']':
+//                 if (stack.pop() !== '[') return false;
+//                 break;
+//         }
+//     }
+//     return stack.length === 0;
+// }
 
-console.log(isValid("()"));       // true
-console.log(isValid("()[]{}"));   // true
-console.log(isValid("(]"));       // false
-console.log(isValid("{[]}"));     // true
+// console.log(isValid("()"));       // true
+// console.log(isValid("()[]{}"));   // true
+// console.log(isValid("(]"));       // false
+// console.log(isValid("{[]}"));     // true
