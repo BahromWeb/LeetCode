@@ -1,209 +1,79 @@
+// 1-masala: Two Sum
+// Masala: Berilgan massiv ichidan shunday ikki sondan iborat indekslarni topingki, ularning yig‘indisi targetga teng bo‘lsin.
+
+const twoSum = (nums, target) => {
+  for(let i = 0; i < nums.length; i++) {
+    for(let j = i + 1; j < nums.length; j++) {
+      if(nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+};
+
+twoSum([2, 7, 11, 15], 9); // [0, 1]
 
 
+function twoSum(nums, target) {
+  const map = new Map();
 
-// 1-masala
-//  Ro‘yxatdan ikkita turli indeksdagi sonlarni topish kerakki, ularning yig‘indisi targetga teng bo‘lsin.
-// Natija sifatida bu ikkala sonning indekslarini massiv ko‘rinishida qaytar.
+  for (let i = 0; i < nums.length; i++) {
+    let needed = target - nums[i];
+    if (map.has(needed)) {
+      return [map.get(needed), i];
+    }
+    map.set(nums[i], i);
+  }
+}
+twoSum([2, 7, 11, 15], 9); // [0, 1]
 
-// const twoSum=(nums, target)=>{
-//     for(let i=0; i<nums.length; i++){
-//         for(let j=i+1; j<nums.length; j++){
-//             if(nums[i]+nums[j]==target){
-//                 return [i, j]
-//             }
-//         }
-//     }
-// }
+function twoSum(nums, target) {
+  const obj = {};
 
+  for (let i = 0; i < nums.length; i++) {
+    const needed = target - nums[i];
+    if (obj.hasOwnProperty(needed)) {
+      return [obj[needed], i];
+    }
+    obj[nums[i]] = i;
+  }
+}
+twoSum([2, 7, 11, 15], 9); // [0, 1]
 
-// console.log(twoSum([3, 4, 5, 7, 8, 89, 43, 20], 15))
+// 2-masala: Palindrome Number
+// Masala: Berilgan son o‘qilsa ham oldidan, ham orqasidan bir xil bo‘lsa — palindrome.
 
-// way-2
+function isPalindrome(x) {
+  const s = x.toString();
+  return s === s.split("").reverse().join("");
+}
 
-// const twoSum=(nums, target)=>{
-//     let map=new Map()
-    
-//     for(let i=0; i<nums.length; i++){
-//         let needed=target-nums[i]
+function isPalindrome(x) {
+  const s = x.toString();
+  let left = 0, right = s.length - 1;
 
-//         if(map.has(needed)){
-//             return [map.get(needed), i]
-//         }
-//         map.set(nums[i], i)
-//     }
+  while (left < right) {
+    if (s[left] !== s[right]) return false;
+    left++;
+    right--;
+  }
 
-// }
-
-// console.log(twoSum([3, 4, 5, 7, 8, 89, 43, 20], 15))
-
-// 2-masala
-// berilgan butun son x palindrom bo‘lsa true qaytar, bo‘lmasa false qaytar.
-// Palindrom — oldindan va orqadan bir xil o‘qiladigan son.
-
-// const isPalindrom=(x)=>{
-//     let str=x.toString()
-//     return str===str.split('').reverse().join('')
-// }
-
-// console.log(isPalindrom(1221))
-
-
-// way -2
-
-// const isPalindrom = (x) => {
-//     if (x < 0) return false;
-
-//     let reversed = 0; 
-//     let original = x; 
-
-//     while (x > 0) {
-//         reversed = reversed * 10 + (x % 10);
-//         x = Math.floor(x / 10);
-//     }
-
-//     if (reversed === original) {
-//         return `${original} Palindrom son`;
-//     } else {
-//         return `${original} Palindrom son emas`;
-//     }
-// }
-
-// console.log(isPalindrom(1221)); 
-// console.log(isPalindrom(1234)); 
-
-// way-3
-
-// function isPalindrome(x) {
-//     if (x < 0 || (x % 10 === 0 && x !== 0)) return false;
-//     let reversedHalf = 0;
-//     while (x > reversedHalf) {
-//         reversedHalf = reversedHalf * 10 + x % 10;
-//         x = Math.floor(x / 10);
-//     }
-//     return x === reversedHalf || x === Math.floor(reversedHalf / 10);
-// }
-// console.log(isPalindrome(121));
+  return true;
+}
 
 
-// 3-masala: Roman to Integer
-//  rim raqami (roman numeral) ko‘rinishidagi matn beriladi.
-// Vazifa — uni butun songa aylantirib qaytarish.
+function isPalindrome(x) {
+  if (x < 0) return false;
 
-// I → 1  
-// V → 5  
-// X → 10   => Matematik eslatma
-// L → 50  
-// C → 100  
-// D → 500  
-// M → 1000
+  let original = x;
+  let reversed = 0;
 
-// const romanToInt=(s)=>{
-//     const values = {
-//         I: 1, V: 5, X: 10, L: 50,
-//         C: 100, D: 500, M: 1000
-//     }
+  while (x > 0) {
+    reversed = reversed * 10 + (x % 10);
+    x = Math.floor(x / 10);
+  }
 
-//     let total=0;
-//     for(let i=0; i<s.length; i++){
-//         if(values[s[i]]<values[s[i+1]]){
-//             total-=values[s[i]]
-//         }else{
-//             total+=values[s[i]]
-//         }
-//     }
-//     return total
-// }
-
-// console.log(romanToInt("XXMMDD"))
-
-// way-2
-
-// const romanToInt=(s)=>{
-//     const values = {
-//         I: 1, V: 5, X: 10, L: 50,
-//         C: 100, D: 500, M: 1000
-//     }
-    
-//     return s.split('').reduce((item, key, i, arr)=>{
-//          return values[key]<values[arr[i+1]]?item-values[key]:item+values[key]
-//     }, 0)
-// }
-
-// console.log(romanToInt("XXMMDD"))
-
-// 4-masala: Longest Common Prefix
-
-// so‘zlar ro‘yxati (strs) berilgan.
-// Vazifa — ularning eng uzun umumiy prefiksini topish.
-// Agar umumiy prefiks bo‘lmasa, bo‘sh string ("") qaytar.
+  return original === reversed;
+}
 
 
-
-// const longestCommonPrefix=(strs)=>{
-//      if(!strs.length) return "";
-//      let first=strs[0]
-//      for(let i=1; i<strs.length; i++){
-//         while(strs[i].indexOf(first) !==0){
-//             first=first.slice(0, first.length-1)
-//             if(!first) return ""
-//         }
-//      }
-//      return first
-// }
-
-// console.log(longestCommonPrefix(["flower", "flow", "flight"]))
-
-// way-2
-
-// const longestCommonPrefix=(strs)=>{
-//     if (!strs.length) return "";
-//     let shortest = strs.reduce((a, b) => a.length < b.length ? a : b);
-//     for (let i = 0; i < shortest.length; i++) {
-//         for (let word of strs) {
-//             if (word[i] !== shortest[i]) {
-//                 return shortest.slice(0, i);
-//             }
-//         }
-//     }
-//     return shortest;
-// }
-// console.log(longestCommonPrefix(["flower", "flow", "flight"])); // "fl"
-
-
-
-// 5-masala: Valid Parentheses
-
-// (, ), {, }, [ va ] belgilaridan iborat string beriladi.
-//  ushbu string to‘g‘ri yozilganini tekshirish
-// Har bir ochilgan qavs mos yopilish belgisi bilan yopilishi kerak.
-// Qavslar to‘g‘ri tartibda joylashgan bo‘lishi kerak.
-
-
-// const isValid=(s)=>{
-//     const stack = [];
-
-//     for (let char of s) {
-//         switch (char) {
-//             case '(':
-//             case '{':
-//             case '[':
-//                 stack.push(char);
-//                 break;
-//             case ')':
-//                 if (stack.pop() !== '(') return false;
-//                 break;
-//             case '}':
-//                 if (stack.pop() !== '{') return false;
-//                 break;
-//             case ']':
-//                 if (stack.pop() !== '[') return false;
-//                 break;
-//         }
-//     }
-//     return stack.length === 0;
-// }
-
-// console.log(isValid("()"));       // true
-// console.log(isValid("()[]{}"));   // true
-// console.log(isValid("(]"));       // false
-// console.log(isValid("{[]}"));     // true
