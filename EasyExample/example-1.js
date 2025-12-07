@@ -22,25 +22,34 @@
 
 // Two way
 
-// const twoSum=(nums, target) => {
-//     const numMap = new Map();
-//     for(let i=0; i<nums.length; i++){
-//         const complement = target - nums[i];
-//         if(numMap.has(complement)){
-//             return [numMap.get(complement), i];
+// function twoSum(nums, target) {
+//     const map = new Map();                       
+
+//     for (let i = 0; i < nums.length; i++) {
+//         let complement = target - nums[i];        
+
+//         if (map.has(complement)) {                
+//             return [map.get(complement), i];     
 //         }
-//         numMap.set(nums[i], i);
+
+//         map.set(nums[i], i);                      
 //     }
 // }
 
-// console.log(twoSum([2,7,11,15], 9)); // Output: [0, 1]
+// console.log(twoSum([2,7,11,15], 9)); // [0,1]
 
 function twoSum(nums, target) {
-    return nums.map((num, i) => {
-        const complement = target - num;
-        const j = nums.findIndex((n, idx) => n === complement && idx !== i);
-        if (j !== -1) return [i, j];
-    }).filter(Boolean)[0];
+    let store = {};                           
+
+    for (let i = 0; i < nums.length; i++) {
+        let need = target - nums[i];           
+
+        if (store[need] !== undefined) {       
+            return [store[need], i];
+        }
+
+        store[nums[i]] = i;                    
+    }
 }
 
 console.log(twoSum([2,7,11,15], 9)); // [0,1]
